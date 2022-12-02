@@ -29,7 +29,7 @@ class Store {
             return parsedNotes;
         });
     }
-    addNotes(note) {
+    addNote(note) {
         const { title, text } = note;
 
         if (!title || !text) {
@@ -45,7 +45,7 @@ class Store {
             .then((updatedNotes) => this.write(updatedNotes))
             .then(() => newNote);
     }
-    removeNotes(id) {
+    removeNote(id) {
         // Get all notes, remove the note with the given id, write the filtered notes
         return this.getNotes()
             .then((notes) => notes.filter((note) => note.id !== id))
